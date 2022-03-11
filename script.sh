@@ -27,26 +27,17 @@ sudo apt-get install figlet
 figlet LinkCubee Script
 
 # Comenzar con la instalacion
-opc=0
 
-while [ $opc -ne 2 ] ; do
+Instalacion(){
 
-echo "1. y"
-echo "2. n"
+  echo -e -n "* ¿Quieres comenzar? y/n: "
+  read -r confirmar
 
-read -p "Seleccione una opcion y/n:" opc
+  if [[ "$confirmar" =~ [Nn] ]]; then
+          exit
+  fi
+}
 
-case $opc in
-
-      1) $instalador
-      ;;
-      2) quit
-      ;;
-      *) quit
-      ;;
-
-esac
-done
 
  # INSTALACION GENERAL
 instalador() {
