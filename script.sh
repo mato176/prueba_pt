@@ -28,19 +28,18 @@ figlet LinkCubee Script
 
 # Comenzar con la instalacion
 
-Instalacion(){
 
-  echo -e -n "* ¿Quieres comenzar? y/n: "
+  echo -e -n "\n* ¿Quieres comenzar? y/n: "
   read -r confirmar
 
   if [[ "$confirmar" =~ [Nn] ]]; then
-          exit
+    exit
+      
   fi
-}
 
 
  # INSTALACION GENERAL
-instalador() {
+
 echo -ne '#####                     (33%)\r'
 sleep 2
 sudo apt install firewalld -y
