@@ -32,7 +32,7 @@ echo -e -n "\n* ¿Iniciar instalacion? (y/n): "
 read opciones;
 
 case $opciones in
-            n) echo "*cancelo la instalacion"
+            n) echo "*cancelo la instalacion";;
             y) 
  # INSTALACION GENERAL
 instalador($CONFIRM) {
@@ -102,6 +102,6 @@ read contrasena
 CREATE USER 'pterodactyl'@'127.0.0.1' IDENTIFIED BY '$contrasena';
 
 CREATE DATABASE panel;
-echo "*base de datos creada"
+echo "*base de datos creada";;
 
 esac
