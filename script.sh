@@ -20,6 +20,7 @@ if ! [ -x "$(command -v curl)" ]; then
   exit 1
 fi
 
+clear 
 # Baner
 sudo apt-get install figlet
 
@@ -27,17 +28,14 @@ figlet LinkCubee Script
 
 # Comenzar con la instalacion
 
-  echo -e -n "\n* ¿Iniciar instalacion? (y/N): "
-  read -r CONFIRM
-  if [[ "$CONFIRM" =~ [Yy] ]]; then
-    perform_install
-  else
-    print_error "Instalacion cancelada"
-    exit 1
-  fi
+echo -e -n "\n* ¿Iniciar instalacion? (y/n): "
+read opciones;
 
-# INSTALACION GENERAL
-perform_install() {
+case $opciones in
+            n) echo "*cancelo la instalacion"
+            y) 
+ # INSTALACION GENERAL
+instalador($CONFIRM) {
 echo -ne '#####                     (33%)\r'
 sleep 2
 sudo apt install firewalld -y
@@ -105,4 +103,5 @@ CREATE USER 'pterodactyl'@'127.0.0.1' IDENTIFIED BY '$contrasena';
 
 CREATE DATABASE panel;
 echo "*base de datos creada"
-}
+
+esac
