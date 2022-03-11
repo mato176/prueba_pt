@@ -27,15 +27,29 @@ sudo apt-get install figlet
 figlet LinkCubee Script
 
 # Comenzar con la instalacion
+opc=0
 
-echo -e -n "\n* ¿Iniciar instalacion? (y/n): "
-read opciones;
+while [ $opc -ne 2 ] ; do
 
-case $opciones in
-            n) echo "*cancelo la instalacion";;
-            y) 
+echo "1. y"
+echo "2. n"
+
+read -p "Seleccione una opcion y/n:" opc
+
+case $opc in
+
+      1) $instalador
+      ;;
+      2) quit
+      ;;
+      *) quit
+      ;;
+
+esac
+done
+
  # INSTALACION GENERAL
-instalador($CONFIRM) {
+instalador() {
 echo -ne '#####                     (33%)\r'
 sleep 2
 sudo apt install firewalld -y
@@ -102,6 +116,4 @@ read contrasena
 CREATE USER 'pterodactyl'@'127.0.0.1' IDENTIFIED BY '$contrasena';
 
 CREATE DATABASE panel;
-echo "*base de datos creada";;
-
-esac
+echo "*base de datos creada"
