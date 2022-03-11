@@ -121,7 +121,7 @@ sleep 3
 
 mysql -u root -e "DROP USER administrador;"
 mysql -u root -e "DROP DATABASE ptero;"
-mysql -u root -e "CREATE USER administrateur IDENTIFIED BY '"${bddpass}"';"
+mysql -u root -e "CREATE USER administrador IDENTIFIED BY '"${bddpass}"';"
 mysql -u root -e "CREATE DATABASE ptero;"
 mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO administrador WITH GRANT OPTION;"
 mkdir -p /var/www/pterodactyl
