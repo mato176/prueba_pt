@@ -63,6 +63,7 @@ add-apt-repository -y ppa:chris-lea/redis-server
 curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
 sleep 3
 
+clear
 echo "*ACTUALIZANDO "
 sleep 3
 apt update
@@ -85,4 +86,23 @@ echo "*Crear carpeta "
 sleep 3
 mkdir -p /var/www/pterodactyl
 cd /var/www/pterodactyl
+
+echo "*EXTRAYENDO TODO LOS ARCHIVOS"
+sleep 3
+curl -Lo panel.tar.gz https://github.com/pterodactyl/panel/releases/latest/download/panel.tar.gz
+tar -xzvf panel.tar.gz
+chmod -R 755 storage/* bootstrap/cache/ 
+
+echo "*CONFIGURANDO MYSQL"
+sleep 3
+mysql -u root -p
+
+echo "*Creando usuario de base de dato"
+sleep 5
+echo "*¿Contrasena para base de datos?"
+read contrasena
+CREATE USER 'pterodactyl'@'127.0.0.1' IDENTIFIED BY '$contrasena';
+
+CREATE DATABASE panel;
+echo "*base de datos creada"
 }
