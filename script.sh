@@ -3,9 +3,13 @@
 # Check Necesarios
 
 #variable
-CONFIG="https://raw.githubusercontent.com/mato176/prueba_pt/main/config"
+CONFIG="https://raw.githubusercontent.com/mato176/prueba_pt/main/config/"
 NGINX_NONSSL="ngnix_nonssl.conf"
 NGINX_SSL="ngnix_ssl.conf"
+
+greenMessage() {
+	echo -e "\\033[32;1m${@}\033[0m"
+}
 
 sudo apt update
 
