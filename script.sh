@@ -154,7 +154,7 @@ echo ${bddpass}
 echo "BDD : ptero"
 echo =================================
 echo =================================
-
+sleep 10
 echo -e -n "\n* ¿Seguir? y/n: "
 read -r confirmar
 
